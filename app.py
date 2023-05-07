@@ -1,4 +1,4 @@
-# Import necessary libraries
+# Import libraries
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -7,14 +7,14 @@ import requests
 import json
 import base64
 
-# Initialize Flask app
+# Run Flask app
 app = Flask(__name__, static_url_path='/static')
 
 # Configure database and secret key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SECRET_KEY'] = 'some_secret_key'
 
-# Initialize database and migration
+# Run database and migration
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -23,7 +23,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-# Define User model for database
+# Define User model
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
@@ -33,7 +33,7 @@ class User(UserMixin, db.Model):
     ipapi_api_key = db.Column(db.String(120), nullable=False)
     abuseipdb_api_key = db.Column(db.String(120), nullable=False)
 
-# Load user for login manager
+# Load user 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id)) 
