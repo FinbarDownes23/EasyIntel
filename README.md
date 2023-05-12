@@ -25,10 +25,6 @@ To run this application, you need to have Python installed on your machine, alon
 
 To run the application, navigate to the directory containing the Python script and run the following command:
 
-   python <your_script_name>.py
-
-Note: Make sure to replace <your_script_name> with the actual name of your Python script.
-
-Please ensure that you have set up the correct database URI and secret key in the app configuration.
+   python app.py
 
 The application will then start and be accessible at http://127.0.0.1:5000
