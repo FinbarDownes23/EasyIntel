@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Page title -->
+    <title>IP Reputation Check</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Responsive design meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav class="main-nav">
+        <ul class="nav-menu">
+            <li><a href="{{ url_for('home', user_id=current_user.id) }}">Home</a></li>
+            <li><a href="{{ url_for('index', user_id=current_user.id) }}">IP Reputation Check</a></li>
+            <li><a href="{{ url_for('filehash', user_id=current_user.id) }}">File Hash Reputation Check</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Container for the main content -->
+    <div class="container">
+        <header>
+            <h1 class="title">IP Reputation Check</h1>
+        </header>
+        <main>
+            <!-- IP address input form -->
+            <form method="POST">
+                <label for="ip_address">Enter an IP address:</label>
+                <input type="text" name="ip_address" placeholder="Enter an IP address...">
+                <button type="submit">Check</button>
+            </form>
+            
+            <!-- Results section -->
+            <div class="results">
+                {% if isp is not none %}
+                    <p class="result isp">ISP: {{ isp }}</p>
+                {% endif %}
+                
+                {% if country is not none %}
+                    <p class="result country">Location: {{ country }}</p>
+                {% endif %}
+                
+                {% if vt_malicious_score is not none %}
+                    <p class="result score">VirusTotal: {{ vt_malicious_score }}</p>
+                {% endif %}
+                
+                {% if xfe_score is not none %}
+                    <p class="result score">IBM X-Force: {{ xfe_score }}</p>
+                {% endif %}
+                
+                {% if abuseipdb_score is not none %}
+                    <p class="result score">AbuseIPDB: {{ abuseipdb_score }}</p>
+                {% endif %}
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>

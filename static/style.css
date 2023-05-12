@@ -1,0 +1,174 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Define color variables */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --light-color: #ecf0f1;
+  --dark-color: #1c1c1c;
+  --hover-color: #7f8c8d;
+  --error-color: #e74c3c;
+  --info-color: #3498db;
+}
+
+/* Style for the body */
+body {
+  background-color: var(--light-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for links */
+.linkdec {
+  color: var(--error-color);
+  text-decoration: none;
+}
+
+/* Style for paragraph text */
+.ptext {
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+/* Style for list items */
+.litext {
+  color: var(--error-color);
+  text-decoration: none;
+}
+
+/* Container style */
+.container {
+  margin: auto;
+  max-width: 600px;
+  padding: 40px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Title style */
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--light-color);
+}
+
+/* Navigation styles */
+.main-nav {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.nav-menu li {
+  margin-left: 20px;
+}
+
+.nav-menu li:first-child {
+  margin-left: 0;
+}
+
+.nav-menu a {
+  color: var(--dark-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--secondary-color);
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+form label {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--light-color);
+}
+
+form input[type="text"], form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+form input[type="text"]:focus, form input[type="password"]:focus {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+form button[type="submit"] {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+form button[type="submit"]:hover {
+  background-color: var(--hover-color);
+}
+
+/* Results styles */
+.results {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.results p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.results .country, .results .isp {
+  color: var(--error-color);
+  font-weight: 600;
+}
+
+.results .score {
+  color: var(--light-color);
+  font-weight: 600;
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    border-radius: 0;
+    padding: 20px;
+  }
+}
+
