@@ -28,3 +28,9 @@ To run the application, navigate to the directory containing the Python script a
    python app.py
 
 The application will then start and be accessible at http://127.0.0.1:5000
+
+
+Link to Youtube Showcase: 
+https://youtu.be/Qr6q6RuWbNw
+
+I have also uploaded my thesis to this for anyone interested in reading through it!
